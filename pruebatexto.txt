@@ -1,1 +1,2 @@
 Hola
+Añadiendo linea que, ahora sí, genera conflictos
