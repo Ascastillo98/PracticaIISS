@@ -1,0 +1,17 @@
+version: '3'
+services:
+  drupal:
+    build: .
+    image: ascastillo98/drupal81
+    ports:
+      - 81:81
+    volumes:
+      - vol-drupal
+  mysql:
+    build: .
+    image: mysql
+    volumes:
+      - vol-mysql
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=pwd
