@@ -1,0 +1,39 @@
+version: '3'
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MARIADB_DATABASE: exampledb
+      MARIADB_USER: exampleuser
+      MARIADB_PASSWORD: examplepass
+      MARIADB_RANDOM_ROOT_PASSWORD: '1'
+    networks:
+      - redDocker
+  wordpress:
+    image: ascastillo98/wordpress82
+    depends_on:
+      - mariadb
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    ports:
+      - 82:82
+    networks:
+      - redDocker
+networks:
+  redDocker:
+
+
+
+
+
+
+
+
+
+
+
+
+
