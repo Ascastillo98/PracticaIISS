@@ -27,7 +27,7 @@ ENTRYPOINT apache2ctl -D FOREGROUND
 ```FROM wordpress
 RUN sed -i 's/Listen 80/Listen 82/g' /etc/apache2/ports.conf
 EXPOSE 82
-``
+```
 
 * El único cambio que debemos realizar es el comando sed para cambiar el puerto por defecto al puerto 82
 * Creamos la carpeta dockercompose2 `mkdir wordpress82´
