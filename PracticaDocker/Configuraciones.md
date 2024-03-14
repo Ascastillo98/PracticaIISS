@@ -13,8 +13,7 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 EXPOSE 81
 ENTRYPOINT apache2ctl -D FOREGROUND
-´´´
-
+```
 * El comando sed es el más importante, para cambiar el puerto por defecto de drupal
 * Creamos la carpeta dockercompose1 `mkdir dockercompose1´
 * Creamos el primer docker-compose. Este fichero está subido en el repositorio. Podemos indicar los volúmenes en el yml mediante `volumes: vol-drupal´ y ´volumes: vol-mysql´
@@ -28,7 +27,7 @@ ENTRYPOINT apache2ctl -D FOREGROUND
 ```FROM wordpress
 RUN sed -i 's/Listen 80/Listen 82/g' /etc/apache2/ports.conf
 EXPOSE 82
-´´´
+``
 
 * El único cambio que debemos realizar es el comando sed para cambiar el puerto por defecto al puerto 82
 * Creamos la carpeta dockercompose2 `mkdir wordpress82´
