@@ -6,13 +6,13 @@
 * Creamos el archivo dockerfile usando nano `nano dockerfile´
 * Contenido del archivo:
   
-* `FROM drupal
-* RUN sed -i 's/Listen 80/Listen 81/g' /etc/apache2/ports.conf
-* ENV APACHE_RUN_USER www-data
-* ENV APACHE_RUN_GROUP www-data
-* ENV APACHE_LOG_DIR /var/log/apache2
-* EXPOSE 81
-* ENTRYPOINT apache2ctl -D FOREGROUND´
+```FROM drupal
+RUN sed -i 's/Listen 80/Listen 81/g' /etc/apache2/ports.conf
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+EXPOSE 81
+ENTRYPOINT apache2ctl -D FOREGROUND´´´
 
 * El comando sed es el más importante, para cambiar el puerto por defecto de drupal
 * Creamos la carpeta dockercompose1 `mkdir dockercompose1´
