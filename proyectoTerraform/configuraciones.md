@@ -1,4 +1,4 @@
-#Práctica Terraform: Configuraciones
+# Práctica Terraform: Configuraciones
 ## Fichero 1: Config.tf
 En primer lugar, indicamos los proveedores:
 ```
