@@ -76,3 +76,41 @@ resource "docker_container" "mariadb" {
   }
 }
 ```
+
+## Fichero 2: Variables.tf
+En este fichero indicamos las variables que utiliza wordpress para su funcionamiento. Corresponden al host y un usuario y contraseña de prueba para poder llevar a cabo la configuración inicial:
+
+```
+variable "wordpress_db_host" {
+  description = "Dirección del host de la base de datos de WordPress"
+  type        = string
+  default     = "Host"
+}
+
+variable "wordpress_db_name" {
+  description = "Nombre de la base de datos de WordPress"
+  type        = string
+  default     = "database"
+}
+
+variable "wordpress_db_user" {
+  description = "Usuario de la base de datos de WordPress"
+  type        = string
+  default     = "user"
+}
+
+variable "wordpress_db_password" {
+  description = "Contraseña de la base de datos de WordPress"
+  type        = string
+  default     = "pwd"
+}
+```
+
+## Comandos
+* `Terraform init´ para poder hacer uso de terraform
+* `Terraform fmt´ para corregir automáticamente fallos de sintaxis
+* `Terraform validate´ para validar que la sintaxis es correcta
+* `Terraform apply´ para crear los recursos indicados en config.tf y levantar el servicio. Al hacer esto, se crea o modifica el fichero Terraform.tfstate
+* `Terraform destroy´ para destruir los recursos y cerrar el servicio
+  
+Se ha utilizado el editor nano para crear y modificar el contenido de los ficheros.  
